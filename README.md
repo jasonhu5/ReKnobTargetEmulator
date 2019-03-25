@@ -10,13 +10,14 @@
 ---
 
 ### Installation
+* Install Python 3.x (and preferably a package manager, e.g. pip)
+* Make sure the Python library __keyboard__ is installed
+  * e.g. by `pip install keyboard`
 * clone or download this repository
 
 ---
 
 ### Preparation before use
-* Make sure the Python library __keyboard__ is installed
-  * e.g. by `pip install keyboard`
 * Change the Unity program accordingly:
   * Change the IP for connection
     * In ___UDPDataLoader.cs___ file => `LoadUDPData()` => (add following lines before returning the udpData)
