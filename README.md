@@ -2,10 +2,10 @@
 
 * ### [Installation](#installation-1)
 * ### [Preparation before use](#preparation-before-use-1)
-* ### [How to use](#how-to-use)
+* ### [How to use](#how-to-use-1)
   * ##### [MAC or Linux](#mac-or-linux-1)
   * ##### [Windows](#windows-1)
-* ### [Explaining the programs](#explaining-the-programs)
+* ### [Explaining the programs](#explaining-the-programs-1)
 
 ---
 
