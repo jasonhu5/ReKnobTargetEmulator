@@ -1,11 +1,11 @@
 # ReKnobTargetEmulator
 
-1. ### [Installation](###Installation)
-2. ### [Preparation before use](###Preparation%20before%20use)
-3. ### [How to use](###How%20to%20use)
-  1. ##### [MAC or Linux](#####MAC%20or%20Linux)
-  2. ##### [Windows](#####Windows)
-4. ### [Explaining the programs](###Explaining%20the%20programs)
+* ### [Installation](#installation-1)
+* ### [Preparation before use](#preparation-before-use-1)
+* ### [How to use](#how-to-use)
+  * ##### [MAC or Linux](#mac-or-linux-1)
+  * ##### [Windows](#windows-1)
+* ### [Explaining the programs](#explaining-the-programs)
 
 ---
 
