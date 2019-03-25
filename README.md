@@ -6,6 +6,7 @@
   * ##### [MAC or Linux](#mac-or-linux-1)
   * ##### [Windows](#windows-1)
 * ### [Explaining the programs](#explaining-the-programs-1)
+* ### [On going progress](#on-going-progress-1)
 
 ---
 
@@ -190,3 +191,8 @@ With regard to the UPD Connection interface:
     * Press __DOWN__ arrow key: decrease _positionLinear_
     * Press __RIGHT__ arrow key: increase _positionRotatory_
     * Press __LEFT__ arrow key: decrease _positionRotatory_
+
+---
+### On going progress
+* [Creatingg application out of the scripts] (https://docs.python-guide.org/shipping/freezing/)
+* [Refreshing output, instead of keep writing] (https://stackoverflow.com/questions/14300770/how-to-refresh-the-multi-line-output-dynamically), also [this link] (https://stackoverflow.com/questions/4897359/output-to-the-same-line-overwriting-previous-output-python-2-5)
