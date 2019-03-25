@@ -101,7 +101,7 @@ def motor_data(
     # release right after program finishes
     sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-    print("Starting - ", threading.currentThread().getName())
+    print("Starting -", threading.currentThread().getName())
     while True:
         data, addr = sock.recvfrom(1024) # buffer size is 1024 bytes
         print("[{}]".format(threading.currentThread().getName()), "R", data.decode())
