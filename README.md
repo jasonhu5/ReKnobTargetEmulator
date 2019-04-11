@@ -12,8 +12,10 @@
 
 ### Installation
 * Install Python 3.x (and preferably a package manager, e.g. pip)
-* Make sure the Python library __keyboard__ is installed
-  * e.g. by `pip install keyboard`
+* Make sure the Python libraries __keyboard__, __reprint__ is installed
+  * e.g. by 
+    *`pip install keyboard`
+    *`pip install reprint`
 * clone or download this repository
 
 ---
