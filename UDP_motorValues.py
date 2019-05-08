@@ -3,6 +3,7 @@ import json
 import keyboard
 import time
 from reprint import output
+import os
 
 MODULE_NAME = "motorValues"
 
@@ -49,10 +50,14 @@ with output(initial_len=len(state)+1, interval=0) as output_lines:
         # msg = input("[{}] <<< ".format(MODULE_NAME))
         # sock.sendto(msg.encode(), (UDP_IP, UDP_TO_PORT))
         sock.sendto(json.dumps(state).encode(), (UDP_IP, UDP_TO_PORT))
-        lines = json.dumps(state, indent=2).split('\n')
-        output_lines[0] = "[{}] S".format(MODULE_NAME)
-        i = 1
-        for k, v in state.items():
-            output_lines[i] = "\t{}: \t{}".format(k, v)
-            i += 1
-
+        # on Windows machines
+        if os.name == 'nt':
+            print(state["positionLinear"], state["positionRotatory"])
+        # on Linux/Unix machines
+        else:
+            lines = json.dumps(state, indent=2).split('\n')
+            output_lines[0] = "[{}] S".format(MODULE_NAME)
+            i = 1
+            for k, v in state.items():
+                output_lines[i] = "\t{}: \t{}".format(k, v)
+                i += 1
