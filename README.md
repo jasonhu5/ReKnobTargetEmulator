@@ -1,5 +1,7 @@
 # ReKnobTargetEmulator
 
+#### A demo video is available at [this link](https://youtu.be/l30rn9pfNkI).
+
 * ### [Installation](#installation-1)
 * ### [Preparation before use](#preparation-before-use-1)
 * ### [How to use](#how-to-use-1)
@@ -11,11 +13,6 @@
 ---
 
 ### Installation
-* Install Python 3.x (and preferably a package manager, e.g. pip)
-* Make sure the Python libraries __keyboard__, __reprint__ is installed
-  * e.g. by 
-    *`pip install keyboard`
-    *`pip install reprint`
 * clone or download this repository
 
 ---
@@ -38,7 +35,7 @@
     motorValues.SetReceiveBuffer(1023);
     safety.SetReceiveBuffer(1023);
     ```
-  * [Optional] To emulate color pad input with keyboard
+  * [Optional] To emulate color pad input with keyboard (If this part of changes are not applied, the color pad input is necessary)
     * In ___InputManager.cs___ file => `Update()` function => (replace original color pad input with)
     ```
     if (Input.GetKeyDown(KeyCode.Y)) {
@@ -86,6 +83,11 @@
 
 ### How to use
 ##### MAC or Linux
+* Install Python 3.x (and preferably a package manager, e.g. pip)
+* Make sure the Python libraries __keyboard__, __reprint__ is installed
+  * e.g. by 
+    * `pip install keyboard`
+    * `pip install reprint`
 ```
 # bring up a terminal window
 python UDP_conns.py
@@ -93,7 +95,7 @@ python UDP_conns.py
 # bring up a terminal window
 python UDP_safety.py
 
-# bring up a terminal window
+# bring up a terminal window, NOTICE the "sudo" requirement
 sudo python UDP_motorValues.py
 
 # start the Unity game
@@ -101,6 +103,14 @@ sudo python UDP_motorValues.py
 # or, input 0/1/2 at the UDP_safety.py window to alter safety condition
 ```
 ##### Windows
+* __The _EASIEST_ way is the "exe" way__
+  1. navigate to `dist` folder in this repository
+  2. double click to open the three `.exe` files, namely
+      * UDP_conns.exe
+      * UDP_motorValues.exe
+      * UDP_safety.exe
+
+* __Or if you want, you can also do it the "py" way__
 ```
 # bring up a cmd window
 python UDP_conns.py
@@ -161,7 +171,13 @@ With regard to the UPD Connection interface:
          {
              "motor":1,
              "mode":2,
-             "jsonData":"{\"startPosition\":0.0,\"middlePosition\":1000.0,\"endPosition\":1000.0,\"forceConstant\":0.125,\"isDamper\":true}"
+             "jsonData":"{
+                \"startPosition\":0.0,
+                \"middlePosition\":1000.0,
+                \"endPosition\":1000.0,
+                \"forceConstant\":0.125,
+                \"isDamper\":true
+              }"
          }
         ```
 2. UDP_safety.py
@@ -180,6 +196,7 @@ With regard to the UPD Connection interface:
   * Program output
     * On startup, the program prints `Starting - motorValues`
     * During execution, the program constantly prints the motorValues json object that is being sent to host:
+    #### On Mac/Linux machines
     ```json
     {
         "positionLinear": 20.0,
@@ -188,13 +205,13 @@ With regard to the UPD Connection interface:
         "velocityRotatory": 0.0
     }
     ```
+    #### On Windows machines: just the "positionLinear" and "positionRotatory" values
+    ```json
+    20.0 0.0
+    ```
+
   * Controls
     * Press __UP__ arrow key: increase _positionLinear_
     * Press __DOWN__ arrow key: decrease _positionLinear_
     * Press __RIGHT__ arrow key: increase _positionRotatory_
     * Press __LEFT__ arrow key: decrease _positionRotatory_
-
----
-### On going progress
-* [Creatingg application out of the scripts] (https://docs.python-guide.org/shipping/freezing/)
-* [Refreshing output, instead of keep writing] (https://stackoverflow.com/questions/14300770/how-to-refresh-the-multi-line-output-dynamically), also [this link] (https://stackoverflow.com/questions/4897359/output-to-the-same-line-overwriting-previous-output-python-2-5)
