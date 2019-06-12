@@ -1,2 +1,4 @@
 # files starting with _tst are local testing scripts and should not be in the repo
 _tst*
+.DS_Store
+stats/*
